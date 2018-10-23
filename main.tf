@@ -8,7 +8,7 @@ resource "github_repository_webhook" "default" {
 
   name       = "${var.name}"
   repository = "${var.github_repositories[count.index]}"
-  active = "${var.active}"
+  active     = "${var.active}"
 
   configuration {
     url          = "${var.webhook_url}"
