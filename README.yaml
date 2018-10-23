@@ -1,0 +1,72 @@
+---
+#
+# This is the canonical configuration for the `README.md`
+# Run `make readme` to rebuild the `README.md`
+#
+
+# Name of this project
+name: terraform-github-repository-webhooks
+
+# License of this project
+license: "APACHE2"
+
+# Canonical GitHub repo
+github_repo: cloudposse/terraform-github-repository-webhooks
+
+# Short description of this project
+description: |-
+  Terraform module to provision webhooks on a set of GitHub repositories. 
+
+# Badges to display
+badges:
+  - name: "Build Status"
+    image: "https://travis-ci.org/cloudposse/terraform-github-repository-webhooks.svg?branch=master"
+    url: "https://travis-ci.org/cloudposse/terraform-github-repository-webhooks"
+  - name: "Latest Release"
+    image: "https://img.shields.io/github/release/cloudposse/terraform-github-repository-webhooks.svg"
+    url: "https://github.com/cloudposse/terraform-github-repository-webhooks/releases/latest"
+  - name: "Slack Community"
+    image: "https://slack.cloudposse.com/badge.svg"
+    url: "https://slack.cloudposse.com"
+
+# How to use this project
+usage: |-
+
+  ```hcl
+  module "github_webhooks" {
+    source     = "git::https://github.com/cloudposse/terraform-github-repository-webhooks.git?ref=master"
+    webhook_url = "https://atlantis.prod.company.com/"
+    content_type = "application/json"
+    events = ["issues"]
+  }
+  
+  ```
+
+include:
+  - "docs/targets.md"
+  - "docs/terraform.md"
+
+related:
+  - name: "terraform-aws-cicd"
+    description: "Terraform Module for CI/CD with AWS Code Pipeline and Code Build"
+    url: "https://github.com/cloudposse/terraform-aws-cicd"
+  - name: "terraform-aws-codebuild"
+    description: "Terraform Module to easily leverage AWS CodeBuild for Continuous Integration"
+    url: "https://github.com/cloudposse/terraform-aws-codebuild"
+
+references:
+  - name: "GitHub Event Types"
+    description: "The list of supported event types which can trigger a webhook"
+    url: "https://developer.github.com/v3/activity/events/types/"
+  - name: "GitHub Hook Types"
+    description: "The type of the webhooks."
+    url: "https://api.github.com/hooks"
+
+# Contributors to this project
+contributors:
+  - name: "Erik Osterman"
+    github: "osterman"
+  - name: "Igor Rodionov"
+    github: "goruha"
+  - name: "Andriy Knysh"
+    github: "aknysh"
