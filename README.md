@@ -9,6 +9,7 @@
 
 
 Terraform module to provision webhooks on a set of GitHub repositories. 
+This is useful if you need to register a webhook en masse across dozens of repositories.
 
 
 ---
@@ -30,14 +31,18 @@ It's 100% Open Source and licensed under the [APACHE2](LICENSE).
 ## Usage
 
 
+Create a GitHub Personal Access Token that has `admin:repo_hook` for full control of repository hooks; in otherwords, we need `write:repo_hook` to write repository hooks and `read:repo_hook` to read repository hooks.
+
 ```hcl
 module "github_webhooks" {
-  source     = "git::https://github.com/cloudposse/terraform-github-repository-webhooks.git?ref=master"
-  webhook_url = "https://atlantis.prod.company.com/"
-  content_type = "application/json"
-  events = ["issues"]
+  source              = "git::https://github.com/cloudposse/terraform-github-repository-webhooks.git?ref=master"
+  github_organization = "cloudposse"
+  github_token        = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  github_repositories = "geodesic"
+  webhook_url         = "https://atlantis.prod.company.com/"
+  content_type        = "application/json"
+  events              = ["issues"]
 }
-
 ```
 
 
