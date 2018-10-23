@@ -41,7 +41,7 @@ variable "webhook_secret" {
 
 variable "webhook_insecure_ssl" {
   description = "Webhook Insecure SSL (E.g. trust self-signed certificates)"
-  default     = "false"
+  default     = false
 }
 
 variable "active" {
