@@ -39,7 +39,7 @@ module "github_webhooks" {
   github_token        = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
   github_repositories = "geodesic"
   webhook_url         = "https://atlantis.prod.company.com/"
-  content_type        = "application/json"
+  content_type        = "json"
   events              = ["issues"]
 }
 ```
@@ -71,7 +71,7 @@ Available targets:
 | github_repositories | List of repository names which should be associated with the webhook | list | `<list>` | no |
 | github_token | GitHub token used for API access | string | - | yes |
 | name | The type of webhook | string | `web` | no |
-| webhook_content_type | Webhook Content Type (E.g. application/json) | string | `application/json` | no |
+| webhook_content_type | Webhook Content Type (E.g. json) | string | `json` | no |
 | webhook_insecure_ssl | Webhook Insecure SSL (E.g. trust self-signed certificates) | string | `false` | no |
 | webhook_secret | Webhook secret | string | `` | no |
 | webhook_url | Webhook URL | string | - | yes |
