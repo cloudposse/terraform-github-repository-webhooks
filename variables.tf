@@ -30,8 +30,8 @@ variable "webhook_url" {
 }
 
 variable "webhook_content_type" {
-  description = "Webhook Content Type (E.g. application/json)"
-  default     = "application/json"
+  description = "Webhook Content Type (E.g. json)"
+  default     = "json"
 }
 
 variable "webhook_secret" {
