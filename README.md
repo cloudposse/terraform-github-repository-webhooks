@@ -49,13 +49,13 @@ Create a GitHub Personal Access Token that has `admin:repo_hook` for full contro
 
 ```hcl
 module "github_webhooks" {
-  source              = "git::https://github.com/cloudposse/terraform-github-repository-webhooks.git?ref=master"
-  github_organization = "cloudposse"
-  github_token        = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-  github_repositories = "geodesic"
-  webhook_url         = "https://atlantis.prod.company.com/"
-  content_type        = "json"
-  events              = ["issues"]
+  source               = "git::https://github.com/cloudposse/terraform-github-repository-webhooks.git?ref=master"
+  github_organization  = "cloudposse"
+  github_token         = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+  github_repositories  = ["geodesic"]
+  webhook_url          = "https://atlantis.prod.company.com/"
+  webhook_content_type = "json"
+  events               = ["issues"]
 }
 ```
 
