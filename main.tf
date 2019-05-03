@@ -6,7 +6,6 @@ provider "github" {
 resource "github_repository_webhook" "default" {
   count = "${var.enabled == "true" && length(var.github_repositories) > 0 ? length(var.github_repositories) : 0}"
 
-  name       = "${var.name}"
   repository = "${var.github_repositories[count.index]}"
   active     = "${var.active}"
 
