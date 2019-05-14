@@ -3,14 +3,6 @@ variable "enabled" {
   default     = "true"
 }
 
-variable "name" {
-  # This is what GitHub calls it. It's must be one of these predefined types. 
-  #   https://api.github.com/hooks
-  description = "The type of webhook"
-
-  default = "web"
-}
-
 variable "github_token" {
   description = "GitHub token used for API access"
 }
