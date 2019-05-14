@@ -45,6 +45,11 @@ We literally have [*hundreds of terraform modules*][terraform_modules] that are 
 
 ## Usage
 
+
+**IMPORTANT:** The `master` branch is used in `source` just as an example. In your code, do not pin to `master` because there may be breaking changes between releases.
+Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://github.com/cloudposse/terraform-github-repository-webhooks/releases).
+
+
 Create a GitHub Personal Access Token that has `admin:repo_hook` for full control of repository hooks; in otherwords, we need `write:repo_hook` to write repository hooks and `read:repo_hook` to read repository hooks.
 
 ```hcl
@@ -54,7 +59,7 @@ module "github_webhooks" {
   github_token        = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
   github_repositories = "geodesic"
   webhook_url         = "https://atlantis.prod.company.com/"
-  content_type        = "json"
+  content_type        = "application/json"
   events              = ["issues"]
 }
 ```
@@ -84,7 +89,6 @@ Available targets:
 | github_organization | GitHub organization to use when creating webhook | string | - | yes |
 | github_repositories | List of repository names which should be associated with the webhook | list | `<list>` | no |
 | github_token | GitHub token used for API access | string | - | yes |
-| name | The type of webhook | string | `web` | no |
 | webhook_content_type | Webhook Content Type (E.g. json) | string | `json` | no |
 | webhook_insecure_ssl | Webhook Insecure SSL (E.g. trust self-signed certificates) | string | `false` | no |
 | webhook_secret | Webhook secret | string | `` | no |
@@ -180,7 +184,7 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 ## Copyright
 
-Copyright © 2017-2018 [Cloud Posse, LLC](https://cpco.io/copyright)
+Copyright © 2017-2019 [Cloud Posse, LLC](https://cpco.io/copyright)
 
 
 
