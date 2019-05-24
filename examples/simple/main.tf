@@ -1,5 +1,6 @@
 variable "github_token" {
-  description = "GitHub token used for API access"
+  default     = ""
+  description = "GitHub token used for API access. If not provided, can be sourced from the `GITHUB_TOKEN` environment variable"
 }
 
 module "webhooks" {
