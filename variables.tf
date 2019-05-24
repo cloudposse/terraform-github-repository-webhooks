@@ -9,7 +9,7 @@ variable "github_token" {
 }
 
 variable "github_organization" {
-  description = "GitHub organization. The account corresponding to the token will need `owner` privileges for this organization. If not provided, can also be sourced from the `GITHUB_ORGANIZATION` environment variable"
+  description = "GitHub organization to use when creating webhooks"
 }
 
 variable "github_repositories" {
