@@ -4,11 +4,12 @@ variable "enabled" {
 }
 
 variable "github_token" {
-  description = "GitHub token used for API access"
+  default     = ""
+  description = "GitHub token used for API access. If not provided, can be sourced from the `GITHUB_TOKEN` environment variable"
 }
 
 variable "github_organization" {
-  description = "GitHub organization to use when creating webhook"
+  description = "GitHub organization to use when creating webhooks"
 }
 
 variable "github_repositories" {
@@ -37,7 +38,7 @@ variable "webhook_insecure_ssl" {
 }
 
 variable "active" {
-  description = "Indicate of the webhook should receive events."
+  description = "Indicate of the webhook should receive events"
   default     = true
 }
 
