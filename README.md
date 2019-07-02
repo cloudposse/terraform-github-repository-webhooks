@@ -5,7 +5,7 @@
 
 # terraform-github-repository-webhooks
 
- [![Build Status](https://travis-ci.org/cloudposse/terraform-github-repository-webhooks.svg?branch=master)](https://travis-ci.org/cloudposse/terraform-github-repository-webhooks) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-github-repository-webhooks.svg)](https://github.com/cloudposse/terraform-github-repository-webhooks/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
+ [![Codefresh Build Status](https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-github-repository-webhooks?type=cf-1)](https://g.codefresh.io/public/accounts/cloudposse/pipelines/5d1b77a81bde72b29e722343) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-github-repository-webhooks.svg)](https://github.com/cloudposse/terraform-github-repository-webhooks/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
 
 
 Terraform module to provision webhooks on a set of GitHub repositories.
@@ -58,7 +58,7 @@ module "github_webhooks" {
   github_organization  = "cloudposse"
   github_token         = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
   github_repositories  = "geodesic"
-  webhook_url          = "https://atlantis.prod.company.com/"
+  webhook_url          = "https://atlantis.prod.company.com"
   webhook_content_type = "application/json"
   events               = ["issues"]
 }
@@ -83,16 +83,22 @@ Available targets:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| active | Indicate of the webhook should receive events | string | `true` | no |
-| enabled | Whether or not to enable this module | string | `true` | no |
-| events | A list of events which should trigger the webhook. | list | `<list>` | no |
+| active | Indicate of the webhook should receive events | bool | `true` | no |
+| enabled | Whether or not to enable this module | bool | `true` | no |
+| events | A list of events which should trigger the webhook. | list(string) | `<list>` | no |
 | github_organization | GitHub organization to use when creating webhooks | string | - | yes |
-| github_repositories | List of repository names which should be associated with the webhook | list | `<list>` | no |
+| github_repositories | List of repository names which should be associated with the webhook | list(string) | `<list>` | no |
 | github_token | GitHub token used for API access. If not provided, can be sourced from the `GITHUB_TOKEN` environment variable | string | `` | no |
-| webhook_content_type | Webhook Content Type (E.g. json) | string | `json` | no |
-| webhook_insecure_ssl | Webhook Insecure SSL (E.g. trust self-signed certificates) | string | `false` | no |
+| webhook_content_type | Webhook Content Type (e.g. `json`) | string | `json` | no |
+| webhook_insecure_ssl | Webhook Insecure SSL (e.g. trust self-signed certificates) | bool | `false` | no |
 | webhook_secret | Webhook secret | string | `` | no |
 | webhook_url | Webhook URL | string | - | yes |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| webhook_url | Webhook URL |
 
 
 
