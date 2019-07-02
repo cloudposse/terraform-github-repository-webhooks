@@ -20,6 +20,6 @@ resource "github_repository_webhook" "default" {
 
   lifecycle {
     # This is required for idempotency
-    ignore_changes = [configuration.secret]
+    ignore_changes = ["configuration.secret"]
   }
 }
