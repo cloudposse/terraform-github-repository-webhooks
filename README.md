@@ -5,7 +5,7 @@
 
 # terraform-github-repository-webhooks
 
- [![Codefresh Build Status](https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-github-repository-webhooks?type=cf-1)](https://g.codefresh.io/public/accounts/cloudposse/pipelines/5d1b77a81bde72b29e722343) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-github-repository-webhooks.svg)](https://github.com/cloudposse/terraform-github-repository-webhooks/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
+ [![Codefresh Build Status](https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-github-repository-webhooks?type=cf-1)](https://g.codefresh.io/public/accounts/cloudposse/pipelines/5d1bcc1a1bde727a7172235e) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-github-repository-webhooks.svg)](https://github.com/cloudposse/terraform-github-repository-webhooks/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
 
 
 Terraform module to provision webhooks on a set of GitHub repositories.

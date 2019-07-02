@@ -22,7 +22,7 @@ description: |-
 badges:
   - name: "Codefresh Build Status"
     image: "https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-github-repository-webhooks?type=cf-1"
-    url: "https://g.codefresh.io/public/accounts/cloudposse/pipelines/5d1b77a81bde72b29e722343"
+    url: "https://g.codefresh.io/public/accounts/cloudposse/pipelines/5d1bcc1a1bde727a7172235e"
   - name: "Latest Release"
     image: "https://img.shields.io/github/release/cloudposse/terraform-github-repository-webhooks.svg"
     url: "https://github.com/cloudposse/terraform-github-repository-webhooks/releases/latest"
