@@ -28,7 +28,7 @@ func TestExamplesComplete(t *testing.T) {
 	// Run `terraform output` to get the value of an output variable
 	webhookUrl := terraform.Output(t, terraformOptions, "webhook_url")
 
-	expectedWebhookUrl := "https://docs.cloudposse.com"
+	expectedWebhookUrl := "https://archive.sweetops.com"
 	// Verify we're getting back the outputs we expect
 	assert.Equal(t, expectedWebhookUrl, webhookUrl)
 }
