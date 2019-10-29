@@ -52,12 +52,14 @@ Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest re
 
 Create a GitHub Personal Access Token that has `admin:repo_hook` for full control of repository hooks; in otherwords, we need `write:repo_hook` to write repository hooks and `read:repo_hook` to read repository hooks.
 
+For a complete example, see [examples/complete](examples/complete).
+
 ```hcl
 module "github_webhooks" {
   source               = "git::https://github.com/cloudposse/terraform-github-repository-webhooks.git?ref=master"
   github_organization  = "cloudposse"
   github_token         = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-  github_repositories  = "geodesic"
+  github_repositories  = ["geodesic"]
   webhook_url          = "https://atlantis.prod.company.com"
   webhook_content_type = "application/json"
   events               = ["issues"]
@@ -249,11 +251,11 @@ Check out [our other projects][github], [follow us on twitter][twitter], [apply 
 |---|---|---|
 
   [osterman_homepage]: https://github.com/osterman
-  [osterman_avatar]: https://github.com/osterman.png?size=150
+  [osterman_avatar]: https://img.cloudposse.com/150x150/https://github.com/osterman.png
   [goruha_homepage]: https://github.com/goruha
-  [goruha_avatar]: https://github.com/goruha.png?size=150
+  [goruha_avatar]: https://img.cloudposse.com/150x150/https://github.com/goruha.png
   [aknysh_homepage]: https://github.com/aknysh
-  [aknysh_avatar]: https://github.com/aknysh.png?size=150
+  [aknysh_avatar]: https://img.cloudposse.com/150x150/https://github.com/aknysh.png
 
 
 
