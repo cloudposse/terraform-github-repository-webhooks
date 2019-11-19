@@ -3,15 +3,6 @@ variable "enabled" {
   default     = "true"
 }
 
-variable "github_token" {
-  default     = ""
-  description = "GitHub token used for API access. If not provided, can be sourced from the `GITHUB_TOKEN` environment variable"
-}
-
-variable "github_organization" {
-  description = "GitHub organization to use when creating webhooks"
-}
-
 variable "github_repositories" {
   description = "List of repository names which should be associated with the webhook"
   type        = "list"
