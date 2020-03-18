@@ -15,6 +15,12 @@ variable "github_organization" {
   description = "GitHub organization to use when creating webhooks"
 }
 
+variable "github_base_url" {
+  type        = string
+  default     = ""
+  description = "The target GitHub base API endpoint. Providing a value is a requirement when working with GitHub Enterprise. (e.g. `https://github.someorg.example/api/v3/`)"
+}
+
 variable "github_repositories" {
   type        = list(string)
   description = "List of repository names which should be associated with the webhook"
