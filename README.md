@@ -100,7 +100,7 @@ module "github_webhooks" {
   github_token         = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
   github_repositories  = ["geodesic"]
   webhook_url          = "https://atlantis.prod.company.com"
-  webhook_content_type = "application/json"
+  webhook_content_type = "json"
   events               = ["issues"]
 }
 ```
