@@ -21,6 +21,12 @@ variable "github_base_url" {
   default     = "https://api.github.com/"
 }
 
+variable "github_anonymous" {
+  type        = bool
+  description = "Github Anonymous API (if `true`, token must not be set as GITHUB_TOKEN or `github_token`)"
+  default     = false
+}
+
 variable "github_repositories" {
   type        = list(string)
   description = "List of repository names which should be associated with the webhook"
