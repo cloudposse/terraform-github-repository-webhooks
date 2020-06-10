@@ -1,7 +1,8 @@
 provider "github" {
   token        = var.github_token != "" ? var.github_token : null
   organization = var.github_organization
-  anonymous    = var.github_token != "" ? false : true
+  anonymous    = var.github_anonymous
+  base_url     = var.github_base_url
 }
 
 resource "github_repository_webhook" "default" {
@@ -21,6 +22,6 @@ resource "github_repository_webhook" "default" {
 
   lifecycle {
     # This is required for idempotency
-    ignore_changes = ["configuration[0].secret"]
+    ignore_changes = [configuration[0].secret]
   }
 }
