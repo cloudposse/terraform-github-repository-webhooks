@@ -41,6 +41,7 @@ init: $(BASE)/vendor
 
 .PHONY : test
 ## Run tests
+test: TF_VAR_github_token=$(GITHUB_TOKEN)
 test: init
 	cd $(BASE) && go test -v -timeout 30m -run TestExamplesComplete
 

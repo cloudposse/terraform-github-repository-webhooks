@@ -21,7 +21,6 @@ variable "github_base_url" {
   default     = "https://api.github.com/"
 }
 
-
 variable "github_repositories" {
   type        = list(string)
   description = "List of repository names which should be associated with the webhook"
