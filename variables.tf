@@ -18,7 +18,7 @@ variable "github_organization" {
 variable "github_base_url" {
   type        = string
   description = "GitHub target API endpoint"
-  default     = "https://github.com/api/"
+  default     = "https://api.github.com/"
 }
 
 
