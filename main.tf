@@ -1,3 +1,9 @@
+terraform {
+  required_providers {
+    github = "~> 2.8.0"
+  }
+}
+
 provider "github" {
   token        = var.github_token != "" ? var.github_token : null
   organization = var.github_organization
