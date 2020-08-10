@@ -4,14 +4,13 @@
 |------|---------|
 | terraform | ~> 0.12.0 |
 | github | ~> 2.8.0 |
-| github | ~> 2.2 |
 | local | ~> 1.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| github | ~> 2.8.0 ~> 2.2 |
+| github | ~> 2.8.0 |
 
 ## Inputs
 
