@@ -2,7 +2,7 @@
 
 | Name | Version |
 |------|---------|
-| terraform | ~> 0.12.0 |
+| terraform | >= 0.12.0 |
 | github | ~> 2.8.0 |
 | local | ~> 1.2 |
 

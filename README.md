@@ -1,6 +1,6 @@
 # terraform-github-repository-webhooks
 
- [![Codefresh Build Status](https://g.codefresh.io/api/badges/pipeline/cloudposse/terraform-modules%2Fterraform-github-repository-webhooks?type=cf-1)](https://g.codefresh.io/public/accounts/cloudposse/pipelines/5d1bcc1a1bde727a7172235e) [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-github-repository-webhooks.svg)](https://github.com/cloudposse/terraform-github-repository-webhooks/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
+ [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-github-repository-webhooks.svg)](https://github.com/cloudposse/terraform-github-repository-webhooks/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
 
 [![README Header][readme_header_img]][readme_header_link]
 
@@ -106,7 +106,7 @@ Available targets:
 
 | Name | Version |
 |------|---------|
-| terraform | ~> 0.12.0 |
+| terraform | >= 0.12.0 |
 | github | ~> 2.8.0 |
 | local | ~> 1.2 |
 
