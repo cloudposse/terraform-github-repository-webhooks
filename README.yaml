@@ -18,7 +18,9 @@ usage: |-
 
   ```hcl
   module "github_webhooks" {
-    source               = "git::https://github.com/cloudposse/terraform-github-repository-webhooks.git?ref=master"
+    source = "cloudposse/repository-webhooks/github"
+    # Cloud Posse recommends pinning every module to a specific version
+    # version = "x.x.x"
     github_organization  = "cloudposse"
     github_token         = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
     github_repositories  = ["geodesic"]
