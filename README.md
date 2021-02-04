@@ -1,6 +1,8 @@
+<!-- markdownlint-disable -->
 # terraform-github-repository-webhooks
 
  [![Latest Release](https://img.shields.io/github/release/cloudposse/terraform-github-repository-webhooks.svg)](https://github.com/cloudposse/terraform-github-repository-webhooks/releases/latest) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
+<!-- markdownlint-restore -->
 
 [![README Header][readme_header_img]][readme_header_link]
 
@@ -65,8 +67,15 @@ We literally have [*hundreds of terraform modules*][terraform_modules] that are 
 ## Usage
 
 
-**IMPORTANT:** The `master` branch is used in `source` just as an example. In your code, do not pin to `master` because there may be breaking changes between releases.
-Instead pin to the release tag (e.g. `?ref=tags/x.y.z`) of one of our [latest releases](https://github.com/cloudposse/terraform-github-repository-webhooks/releases).
+**IMPORTANT:** We do not pin modules to versions in our examples because of the
+difficulty of keeping the versions in the documentation in sync with the latest released versions.
+We highly recommend that in your code you pin the version to the exact version you are
+using so that your infrastructure remains stable, and update versions in a
+systematic way so that they do not catch you by surprise.
+
+Also, because of a bug in the Terraform registry ([hashicorp/terraform#21417](https://github.com/hashicorp/terraform/issues/21417)),
+the registry shows many of our inputs as required when in fact they are optional.
+The table below correctly indicates which inputs are required.
 
 
 Create a GitHub Personal Access Token that has `admin:repo_hook` for full control of repository hooks; in otherwords, we need `write:repo_hook` to write repository hooks and `read:repo_hook` to read repository hooks.
@@ -75,7 +84,9 @@ For a complete example, see [examples/complete](examples/complete).
 
 ```hcl
 module "github_webhooks" {
-  source               = "git::https://github.com/cloudposse/terraform-github-repository-webhooks.git?ref=master"
+  source = "cloudposse/repository-webhooks/github"
+  # Cloud Posse recommends pinning every module to a specific version
+  # version = "x.x.x"
   github_organization  = "cloudposse"
   github_token         = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
   github_repositories  = ["geodesic"]
@@ -102,32 +113,44 @@ Available targets:
 
 ```
 <!-- markdownlint-restore -->
+<!-- markdownlint-disable -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12.0 |
-| github | ~> 2.8.0 |
-| local | ~> 1.2 |
+| terraform | >= 0.12.26 |
+| github | >= 3.0.0 |
+| local | >= 1.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| github | ~> 2.8.0 |
+| github | >= 3.0.0 |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | active | Indicate of the webhook should receive events | `bool` | `true` | no |
-| enabled | Whether or not to enable this module | `bool` | `true` | no |
+| additional\_tag\_map | Additional tags for appending to tags\_as\_list\_of\_maps. Not added to `tags`. | `map(string)` | `{}` | no |
+| attributes | Additional attributes (e.g. `1`) | `list(string)` | `[]` | no |
+| context | Single object for setting entire context at once.<br>See description of individual variables for details.<br>Leave string and numeric variables as `null` to use default value.<br>Individual variable settings (non-null) override settings in context object,<br>except for attributes, tags, and additional\_tag\_map, which are merged. | <pre>object({<br>    enabled             = bool<br>    namespace           = string<br>    environment         = string<br>    stage               = string<br>    name                = string<br>    delimiter           = string<br>    attributes          = list(string)<br>    tags                = map(string)<br>    additional_tag_map  = map(string)<br>    regex_replace_chars = string<br>    label_order         = list(string)<br>    id_length_limit     = number<br>  })</pre> | <pre>{<br>  "additional_tag_map": {},<br>  "attributes": [],<br>  "delimiter": null,<br>  "enabled": true,<br>  "environment": null,<br>  "id_length_limit": null,<br>  "label_order": [],<br>  "name": null,<br>  "namespace": null,<br>  "regex_replace_chars": null,<br>  "stage": null,<br>  "tags": {}<br>}</pre> | no |
+| delimiter | Delimiter to be used between `namespace`, `environment`, `stage`, `name` and `attributes`.<br>Defaults to `-` (hyphen). Set to `""` to use no delimiter at all. | `string` | `null` | no |
+| enabled | Set to false to prevent the module from creating any resources | `bool` | `null` | no |
+| environment | Environment, e.g. 'uw2', 'us-west-2', OR 'prod', 'staging', 'dev', 'UAT' | `string` | `null` | no |
 | events | A list of events which should trigger the webhook. | `list(string)` | <pre>[<br>  "issue_comment",<br>  "pull_request",<br>  "pull_request_review",<br>  "pull_request_review_comment"<br>]</pre> | no |
-| github\_anonymous | Github Anonymous API (if `true`, token must not be set as GITHUB\_TOKEN or `github_token`) | `bool` | `false` | no |
 | github\_base\_url | GitHub target API endpoint | `string` | `"https://api.github.com/"` | no |
 | github\_organization | GitHub organization to use when creating webhooks | `string` | n/a | yes |
 | github\_repositories | List of repository names which should be associated with the webhook | `list(string)` | `[]` | no |
 | github\_token | GitHub token used for API access. If not provided, can be sourced from the `GITHUB_TOKEN` environment variable | `string` | `""` | no |
+| id\_length\_limit | Limit `id` to this many characters.<br>Set to `0` for unlimited length.<br>Set to `null` for default, which is `0`.<br>Does not affect `id_full`. | `number` | `null` | no |
+| label\_order | The naming order of the id output and Name tag.<br>Defaults to ["namespace", "environment", "stage", "name", "attributes"].<br>You can omit any of the 5 elements, but at least one must be present. | `list(string)` | `null` | no |
+| name | Solution name, e.g. 'app' or 'jenkins' | `string` | `null` | no |
+| namespace | Namespace, which could be your organization name or abbreviation, e.g. 'eg' or 'cp' | `string` | `null` | no |
+| regex\_replace\_chars | Regex to replace chars with empty string in `namespace`, `environment`, `stage` and `name`.<br>If not set, `"/[^a-zA-Z0-9-]/"` is used to remove all characters other than hyphens, letters and digits. | `string` | `null` | no |
+| stage | Stage, e.g. 'prod', 'staging', 'dev', OR 'source', 'build', 'test', 'deploy', 'release' | `string` | `null` | no |
+| tags | Additional tags (e.g. `map('BusinessUnit','XYZ')` | `map(string)` | `{}` | no |
 | webhook\_content\_type | Webhook Content Type (e.g. `json`) | `string` | `"json"` | no |
 | webhook\_insecure\_ssl | Webhook Insecure SSL (e.g. trust self-signed certificates) | `bool` | `false` | no |
 | webhook\_secret | Webhook secret | `string` | `""` | no |
@@ -139,6 +162,7 @@ Available targets:
 |------|-------------|
 | webhook\_url | Webhook URL |
 
+<!-- markdownlint-restore -->
 
 
 
@@ -238,7 +262,7 @@ In general, PRs are welcome. We follow the typical "fork-and-pull" Git workflow.
 
 ## Copyright
 
-Copyright © 2017-2020 [Cloud Posse, LLC](https://cpco.io/copyright)
+Copyright © 2017-2021 [Cloud Posse, LLC](https://cpco.io/copyright)
 
 
 
@@ -295,8 +319,10 @@ Check out [our other projects][github], [follow us on twitter][twitter], [apply 
 
 ### Contributors
 
+<!-- markdownlint-disable -->
 |  [![Erik Osterman][osterman_avatar]][osterman_homepage]<br/>[Erik Osterman][osterman_homepage] | [![Igor Rodionov][goruha_avatar]][goruha_homepage]<br/>[Igor Rodionov][goruha_homepage] | [![Andriy Knysh][aknysh_avatar]][aknysh_homepage]<br/>[Andriy Knysh][aknysh_homepage] |
 |---|---|---|
+<!-- markdownlint-restore -->
 
   [osterman_homepage]: https://github.com/osterman
   [osterman_avatar]: https://img.cloudposse.com/150x150/https://github.com/osterman.png

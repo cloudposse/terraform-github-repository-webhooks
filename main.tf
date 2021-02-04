@@ -1,12 +1,11 @@
 provider "github" {
   token        = var.github_token != "" ? var.github_token : null
   organization = var.github_organization
-  anonymous    = var.github_anonymous
   base_url     = var.github_base_url
 }
 
 resource "github_repository_webhook" "default" {
-  count = var.enabled && length(var.github_repositories) > 0 ? length(var.github_repositories) : 0
+  count = module.this.enabled && length(var.github_repositories) > 0 ? length(var.github_repositories) : 0
 
   repository = var.github_repositories[count.index]
   active     = var.active

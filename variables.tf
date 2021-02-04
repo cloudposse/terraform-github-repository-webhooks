@@ -1,9 +1,3 @@
-variable "enabled" {
-  type        = bool
-  description = "Whether or not to enable this module"
-  default     = true
-}
-
 variable "github_token" {
   type        = string
   default     = ""
@@ -19,12 +13,6 @@ variable "github_base_url" {
   type        = string
   description = "GitHub target API endpoint"
   default     = "https://api.github.com/"
-}
-
-variable "github_anonymous" {
-  type        = bool
-  description = "Github Anonymous API (if `true`, token must not be set as GITHUB_TOKEN or `github_token`)"
-  default     = false
 }
 
 variable "github_repositories" {
