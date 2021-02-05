@@ -3,8 +3,9 @@ terraform {
 
   required_providers {
     github = {
-      source  = "hashicorp/github"
-      version = ">= 3.0.0"
+      source = "hashicorp/github"
+      # breaking changes both immediately before and after 3.0.0, pin exactly
+      version = "3.0.0"
     }
     local = {
       source  = "hashicorp/local"
