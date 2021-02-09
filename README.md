@@ -138,14 +138,14 @@ Available targets:
 | Name | Version |
 |------|---------|
 | terraform | >= 0.13.0 |
-| github | 3.0.0 |
+| github | 3.1.0 |
 | local | >= 1.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| github | 3.0.0 |
+| github | 3.1.0 |
 
 ## Inputs
 
