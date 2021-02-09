@@ -4,14 +4,14 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 0.13.0 |
-| github | 3.0.0 |
+| github | 4.4.0 |
 | local | >= 1.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| github | 3.0.0 |
+| github | 4.4.0 |
 
 ## Inputs
 
