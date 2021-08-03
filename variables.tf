@@ -6,7 +6,14 @@ variable "github_token" {
 
 variable "github_organization" {
   type        = string
+  default     = null
   description = "GitHub organization to use when creating webhooks"
+}
+
+variable "github_owner" {
+  type        = string
+  default     = null
+  description = "This is the target GitHub organization or individual user account to manage."
 }
 
 variable "github_base_url" {
