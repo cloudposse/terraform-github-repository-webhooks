@@ -1,6 +1,7 @@
 provider "github" {
   token        = var.github_token != "" ? var.github_token : null
   organization = var.github_organization
+  owner        = var.github_owner
   base_url     = var.github_base_url
 }
 
