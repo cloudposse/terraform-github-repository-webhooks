@@ -144,7 +144,7 @@ Available targets:
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | 4.4.0 |
+| <a name="provider_github"></a> [github](#provider\_github) | >= 4.4.0 |
 
 ## Modules
 
@@ -156,7 +156,7 @@ Available targets:
 
 | Name | Type |
 |------|------|
-| [github_repository_webhook.default](https://registry.terraform.io/providers/integrations/github/4.4.0/docs/resources/repository_webhook) | resource |
+| [github_repository_webhook.default](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_webhook) | resource |
 
 ## Inputs
 
