@@ -4,14 +4,14 @@
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
-| <a name="requirement_github"></a> [github](#requirement\_github) | 3.0.0 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | 5.3.0 |
 | <a name="requirement_local"></a> [local](#requirement\_local) | >= 1.2 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_github"></a> [github](#provider\_github) | 3.0.0 |
+| <a name="provider_github"></a> [github](#provider\_github) | 5.3.0 |
 
 ## Modules
 
@@ -23,7 +23,7 @@
 
 | Name | Type |
 |------|------|
-| [github_repository_webhook.default](https://registry.terraform.io/providers/hashicorp/github/3.0.0/docs/resources/repository_webhook) | resource |
+| [github_repository_webhook.default](https://registry.terraform.io/providers/hashicorp/github/5.3.0/docs/resources/repository_webhook) | resource |
 
 ## Inputs
 
