@@ -1,20 +1,3 @@
-variable "github_token" {
-  type        = string
-  default     = ""
-  description = "GitHub token used for API access. If not provided, can be sourced from the `GITHUB_TOKEN` environment variable"
-}
-
-variable "github_organization" {
-  type        = string
-  description = "GitHub organization to use when creating webhooks"
-}
-
-variable "github_base_url" {
-  type        = string
-  description = "GitHub target API endpoint"
-  default     = "https://api.github.com/"
-}
-
 variable "github_repositories" {
   type        = list(string)
   description = "List of repository names which should be associated with the webhook"
