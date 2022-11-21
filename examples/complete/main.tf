@@ -2,6 +2,11 @@ provider "aws" {
   region = var.region
 }
 
+provider "github" {
+  token = var.github_token
+  owner = var.owner
+}
+
 module "webhooks" {
   source              = "../../"
   active              = false
@@ -10,4 +15,8 @@ module "webhooks" {
   events              = var.events
 
   context = module.this.context
+
+  providers = {
+    github = github
+  }
 }

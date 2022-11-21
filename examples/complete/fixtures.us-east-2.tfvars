@@ -1,6 +1,6 @@
 region = "us-west-1"
 
-github_organization = "cloudposse"
+owner = "cloudposse"
 
 github_repositories = ["terraform-github-repository-webhooks"]
 

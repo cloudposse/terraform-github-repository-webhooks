@@ -9,9 +9,9 @@ variable "github_token" {
   description = "GitHub token used for API access. If not provided, can be sourced from the `GITHUB_TOKEN` environment variable"
 }
 
-variable "github_organization" {
+variable "owner" {
   type        = string
-  description = "GitHub organization to use when creating webhooks"
+  description = "Repo owner"
 }
 
 variable "github_repositories" {
