@@ -1,6 +1,3 @@
-provider "github" {
-}
-
 resource "github_repository_webhook" "default" {
   count = module.this.enabled && length(var.github_repositories) > 0 ? length(var.github_repositories) : 0
 
