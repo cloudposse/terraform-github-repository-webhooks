@@ -14,8 +14,4 @@ module "webhooks" {
   events              = var.events
 
   context = module.this.context
-
-  providers = {
-    github = github
-  }
 }
