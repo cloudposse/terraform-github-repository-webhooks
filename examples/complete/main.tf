@@ -3,7 +3,6 @@ provider "aws" {
 }
 
 provider "github" {
-  token = var.github_token
   owner = var.owner
 }
 
@@ -15,4 +14,8 @@ module "webhooks" {
   events              = var.events
 
   context = module.this.context
+
+  providers = {
+    github = github
+  }
 }
