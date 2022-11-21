@@ -3,9 +3,7 @@ terraform {
 
   required_providers {
     github = {
-      source = "integrations/github"
-      # breaking changes both immediately before and after 3.0.0, pin exactly
-      # until ready to upgrade to integrations/github 4.2 or later
+      source  = "integrations/github"
       version = ">= 4.2.0"
     }
     local = {
