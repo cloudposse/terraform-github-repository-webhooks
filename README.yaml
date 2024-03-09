@@ -5,12 +5,15 @@ description: |-
   Terraform module to provision webhooks on a set of GitHub repositories.
   This is useful if you need to register a webhook en masse across dozens of repositories.
 badges:
-- name: Latest Release
-  image: https://img.shields.io/github/release/cloudposse/terraform-github-repository-webhooks.svg
-  url: https://github.com/cloudposse/terraform-github-repository-webhooks/releases/latest
-- name: Slack Community
-  image: https://slack.cloudposse.com/badge.svg
-  url: https://slack.cloudposse.com
+  - name: Latest Release
+    image: https://img.shields.io/github/release/cloudposse/terraform-github-repository-webhooks.svg?style=for-the-badge
+    url: https://github.com/cloudposse/terraform-github-repository-webhooks/releases/latest
+  - name: Last Updated
+    image: https://img.shields.io/github/last-commit/cloudposse/terraform-github-repository-webhooks.svg?style=for-the-badge
+    url: https://github.com/cloudposse/terraform-github-repository-webhooks/commits
+  - name: Slack Community
+    image: https://slack.cloudposse.com/for-the-badge.svg
+    url: https://slack.cloudposse.com
 usage: |-
   Create a GitHub Personal Access Token that has `admin:repo_hook` for full control of repository hooks; in otherwords, we need `write:repo_hook` to write repository hooks and `read:repo_hook` to read repository hooks.
 
@@ -30,26 +33,22 @@ usage: |-
   }
   ```
 include:
-- docs/targets.md
-- docs/terraform.md
+  - docs/targets.md
+  - docs/terraform.md
+
+# List any related terraform modules that this module may be used with or that this module depends on.
 related:
-- name: terraform-aws-cicd
-  description: Terraform Module for CI/CD with AWS Code Pipeline and Code Build
-  url: https://github.com/cloudposse/terraform-aws-cicd
-- name: terraform-aws-codebuild
-  description: Terraform Module to easily leverage AWS CodeBuild for Continuous Integration
-  url: https://github.com/cloudposse/terraform-aws-codebuild
+  - name: terraform-aws-cicd
+    description: Terraform Module for CI/CD with AWS Code Pipeline and Code Build
+    url: https://github.com/cloudposse/terraform-aws-cicd
+  - name: terraform-aws-codebuild
+    description: Terraform Module to easily leverage AWS CodeBuild for Continuous Integration
+    url: https://github.com/cloudposse/terraform-aws-codebuild
 references:
-- name: GitHub Event Types
-  description: The list of supported event types which can trigger a webhook
-  url: https://developer.github.com/v3/activity/events/types/
-- name: GitHub Hook Types
-  description: The type of the webhooks.
-  url: https://api.github.com/hooks
-contributors:
-- name: Erik Osterman
-  github: osterman
-- name: Igor Rodionov
-  github: goruha
-- name: Andriy Knysh
-  github: aknysh
+  - name: GitHub Event Types
+    description: The list of supported event types which can trigger a webhook
+    url: https://developer.github.com/v3/activity/events/types/
+  - name: GitHub Hook Types
+    description: The type of the webhooks.
+    url: https://api.github.com/hooks
+contributors: []
